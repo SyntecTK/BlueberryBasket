@@ -1,19 +1,22 @@
 fileFormatVersion: 2
-guid: d1fe8dab1829fae43a2343a9d8c677dc
+guid: 33685ae805e504d48aa9be9e11b03a7b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1722673897881511650
-    second: ColorTrees_0
+      213: 2691640718462685807
+    second: buildings-shadows-1_0
   - first:
-      213: -609769156071962156
-    second: ColorTrees_1
+      213: -937373284660370490
+    second: buildings-shadows-1_1
   - first:
-      213: 4483597707205374776
-    second: ColorTrees_2
+      213: -4829288583079207837
+    second: buildings-shadows-1_2
   - first:
-      213: 8793885664525597707
-    second: ColorTrees_3
+      213: 849653133552818155
+    second: buildings-shadows-1_3
+  - first:
+      213: -9029335530893005275
+    second: buildings-shadows-1_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +49,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -60,7 +63,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -84,7 +87,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -109,13 +112,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ColorTrees_0
+      name: buildings-shadows-1_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 0
-        width: 58
-        height: 60
+        x: 0
+        y: 275
+        width: 193
+        height: 192
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +127,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e195fec8735d718e0800000000000000
-      internalID: -1722673897881511650
+      spriteID: f6212f6f8f0aa5520800000000000000
+      internalID: 2691640718462685807
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ColorTrees_1
+      name: buildings-shadows-1_1
       rect:
         serializedVersion: 2
-        x: 66
-        y: 0
-        width: 58
-        height: 60
+        x: 207
+        y: 275
+        width: 251
+        height: 114
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -146,20 +149,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4d94759ee2aa987f0800000000000000
-      internalID: -609769156071962156
+      spriteID: 6c3a0e9c6f7cdf2f0800000000000000
+      internalID: -937373284660370490
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ColorTrees_2
+      name: buildings-shadows-1_2
       rect:
         serializedVersion: 2
-        x: 130
-        y: 0
-        width: 58
-        height: 60
+        x: 0
+        y: 19
+        width: 318
+        height: 242
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -168,20 +171,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8337bbd0c50f83e30800000000000000
-      internalID: 4483597707205374776
+      spriteID: 36cd6bfce9beafcb0800000000000000
+      internalID: -4829288583079207837
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ColorTrees_3
+      name: buildings-shadows-1_3
       rect:
         serializedVersion: 2
-        x: 194
-        y: 0
-        width: 58
-        height: 60
+        x: 449
+        y: 147
+        width: 80
+        height: 82
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -190,8 +193,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b0cb27d7b682a0a70800000000000000
-      internalID: 8793885664525597707
+      spriteID: be796b7f5039acb00800000000000000
+      internalID: 849653133552818155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings-shadows-1_4
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 7
+        width: 146
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52e2f439c2b51b280800000000000000
+      internalID: -9029335530893005275
       vertices: []
       indices: 
       edges: []
@@ -210,10 +235,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      ColorTrees_0: -1722673897881511650
-      ColorTrees_1: -609769156071962156
-      ColorTrees_2: 4483597707205374776
-      ColorTrees_3: 8793885664525597707
+      buildings-shadows-1_0: 2691640718462685807
+      buildings-shadows-1_1: -937373284660370490
+      buildings-shadows-1_2: -4829288583079207837
+      buildings-shadows-1_3: 849653133552818155
+      buildings-shadows-1_4: -9029335530893005275
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

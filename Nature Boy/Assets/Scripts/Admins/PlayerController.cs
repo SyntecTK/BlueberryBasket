@@ -10,9 +10,20 @@ public class PlayerController : MonoBehaviour {
     private Vector2 lastMoveDirection;
     private bool facingLeft = true;
 
+    private bool shootingActive = true;
+    private Shooting shootingScript;
+    [SerializeField] private GameObject staffGO;
+    [SerializeField] private GameObject crosshair;
+    private bool meleeActive = false;
+    private MeleeAttack meleeScript;
+    [SerializeField] private GameObject meleeGO;
+
     void Start() {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+
+        shootingScript = GetComponent<Shooting>();
+        meleeScript = GetComponent<MeleeAttack>();
     }
 
     // Update is called once per frame
@@ -23,7 +34,17 @@ public class PlayerController : MonoBehaviour {
             Flip();
         }
 
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            shootingActive = !shootingActive;
+            shootingScript.enabled = !shootingScript.enabled;
+            staffGO.SetActive(!staffGO.activeSelf);
+            crosshair.SetActive(!crosshair.activeSelf);
 
+            meleeActive = !meleeActive;
+            meleeScript.enabled = !meleeScript.enabled;
+            meleeGO.SetActive(!meleeGO.activeSelf);
+        }
     }
 
     private void FixedUpdate() {

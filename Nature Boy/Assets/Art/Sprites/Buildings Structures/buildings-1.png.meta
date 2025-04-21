@@ -1,10 +1,22 @@
 fileFormatVersion: 2
-guid: f30f64a1408f1bc4aab16ac97be1b70b
+guid: 5d5febf889eb82c4a8f83d8258b34a21
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 920303039052032408
-    second: GrassTilemap16x9999_0
+      213: 2797568520158776403
+    second: buildings-1_0
+  - first:
+      213: 5917943508263458349
+    second: buildings-1_1
+  - first:
+      213: 7035285079764342680
+    second: buildings-1_2
+  - first:
+      213: 524346211709040016
+    second: buildings-1_3
+  - first:
+      213: 1101369543887592402
+    second: buildings-1_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +49,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -51,7 +63,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,7 +87,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -100,13 +112,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: GrassTilemap16x9999_0
+      name: buildings-1_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 256
-        height: 256
+        y: 63
+        width: 65
+        height: 192
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +127,96 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 899a860fcb295cc00800000000000000
-      internalID: 920303039052032408
+      spriteID: 35c01e63fb5f2d620800000000000000
+      internalID: 2797568520158776403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings-1_1
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 15
+        width: 130
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d265fd22442c02250800000000000000
+      internalID: 5917943508263458349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings-1_2
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 143
+        width: 130
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89795f8618a52a160800000000000000
+      internalID: 7035285079764342680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings-1_3
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 131
+        width: 66
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0953d38f91ad64700800000000000000
+      internalID: 524346211709040016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings-1_4
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 143
+        width: 47
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2db9addc3c9d84f00800000000000000
+      internalID: 1101369543887592402
       vertices: []
       indices: 
       edges: []
@@ -135,7 +235,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      GrassTilemap16x9999_0: 920303039052032408
+      buildings-1_0: 2797568520158776403
+      buildings-1_1: 5917943508263458349
+      buildings-1_2: 7035285079764342680
+      buildings-1_3: 524346211709040016
+      buildings-1_4: 1101369543887592402
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
