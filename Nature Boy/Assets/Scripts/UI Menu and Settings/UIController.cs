@@ -11,6 +11,7 @@ public class UIController : MonoBehaviour {
 
     private void Awake() {
         instance = this;
+        GameManager.OnCollectiblePickedUp += UpdateCollectibleScore;
     }
 
     public Image fadeScreen;
@@ -54,12 +55,10 @@ public class UIController : MonoBehaviour {
     public void FadeToBlack() {
         isFadingToBlack = true;
         isFadingFromBlack = false;
-
     }
     public void FadeFromBlack() {
         isFadingToBlack = false;
         isFadingFromBlack = true;
-
     }
 
     /*public void UpdateHealthDisplay(int health)
@@ -70,6 +69,10 @@ public class UIController : MonoBehaviour {
         healthSlider.value = health;
     }*/
 
+    private void UpdateCollectibleScore()
+    {
+        coinText.text = GameManager.Instance.GetCollectibleCount().ToString();
+    }
     public void PauseUnpause() {
         pauseScreen.SetActive(!pauseScreen.activeSelf);
         if (pauseScreen.activeSelf) {
@@ -78,13 +81,7 @@ public class UIController : MonoBehaviour {
         } else {
             Cursor.lockState = CursorLockMode.Locked;
             Time.timeScale = 1;
-
         }
-    }
-
-    public void SetTimeScale() {
-        Time.timeScale = 1;
-
     }
 
     public void GoToMainMenu() {

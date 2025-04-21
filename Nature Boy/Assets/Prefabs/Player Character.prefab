@@ -116,7 +116,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &5749996179441821861
 MonoBehaviour:
@@ -131,6 +131,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 3
+  staffGO: {fileID: 0}
+  crosshair: {fileID: 0}
+  meleeGO: {fileID: 0}
 --- !u!95 &4814444494452847086
 Animator:
   serializedVersion: 7

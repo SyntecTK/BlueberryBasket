@@ -1,16 +1,39 @@
+using System;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public static GameManager Instance { get; private set; }
+
+    public static event Action OnCollectiblePickedUp;
+    private int currentCollectibles = 0;
+
+    private void Awake()
     {
-        
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Debug.LogWarning("Multiple GameManagers in scene. Destroying duplicate.");
+            Destroy(gameObject);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        currentCollectibles = 0;
+    }
+
+    public void CollectiblePickedUp()
+    {
+        currentCollectibles++;
+        OnCollectiblePickedUp?.Invoke();
+    }
+
+    public int GetCollectibleCount()
+    {
+        return currentCollectibles;
     }
 }
