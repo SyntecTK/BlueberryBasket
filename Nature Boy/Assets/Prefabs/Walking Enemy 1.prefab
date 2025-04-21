@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 1773744530177202101}
   - component: {fileID: 8790903324132150403}
   - component: {fileID: 3855459988127800788}
+  - component: {fileID: 6663186274117747527}
+  - component: {fileID: 2624541967935739975}
   m_Layer: 0
   m_Name: Walking Enemy 1
   m_TagString: Enemy
@@ -162,3 +164,32 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.42040116, y: 0.8147183}
   m_EdgeRadius: 0
+--- !u!114 &6663186274117747527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3326309784288053342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29e1294926a398a4bbec8f755fc0d362, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  behaviour: {fileID: 2624541967935739975}
+  moveSpeed: 1
+  maxHealth: 3
+  collectiblePrefab: {fileID: 4656659322930194973, guid: d7389b911bfc82e4abb0b9901a9bb681, type: 3}
+--- !u!114 &2624541967935739975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3326309784288053342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 410a74d174279674f9f8b9ff3799bb43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 2

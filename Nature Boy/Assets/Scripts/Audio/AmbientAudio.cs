@@ -27,7 +27,7 @@ public class AmbientAudio : MonoBehaviour
     {
         audio = GetComponent<AudioSource>();
         if (audio.clip == null) yield break;
-        if (audioListener == null) audioListener = GameObject.FindObjectOfType<AudioListener>();
+        if (audioListener == null) audioListener = FindFirstObjectByType<AudioListener>();
         audio.loop = false;
         delays = new WaitForSeconds[7];
         for (var i = 0; i < delays.Length; i++)
