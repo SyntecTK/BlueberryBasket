@@ -17,6 +17,7 @@ public class UIController : MonoBehaviour {
 
     private void OnDestroy()
     {
+        GameManager.OnPlayerDamaged += UpdateHealthBar;
         GameManager.OnCollectiblePickedUp -= UpdateCollectibleScore;
     }
 
@@ -35,8 +36,9 @@ public class UIController : MonoBehaviour {
     public string mainMenu, levelSelect;
 
     // Start is called before the first frame update
-    void Start() {
-
+    void Start()
+    {
+        
     }
 
     // Update is called once per frame
@@ -83,6 +85,7 @@ public class UIController : MonoBehaviour {
     {
         healthSlider.value = currentHealth;
     }
+
     public void PauseUnpause() {
         pauseScreen.SetActive(!pauseScreen.activeSelf);
         if (pauseScreen.activeSelf) {

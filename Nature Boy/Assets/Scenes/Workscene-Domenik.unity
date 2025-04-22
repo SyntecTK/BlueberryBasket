@@ -201,6 +201,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  dashSpeed: 15
+  dashDuration: 0.2
+  dashCooldown: 1
   staffGO: {fileID: 1222044247}
   crosshair: {fileID: 1665721770}
   meleeGO: {fileID: 1360064761}
@@ -662,6 +665,10 @@ PrefabInstance:
     - target: {fileID: 8688577103303463205, guid: 06dc29351dd29c142aed843d892e3d07, type: 3}
       propertyPath: m_Name
       value: Walking Enemy 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8688577103303463205, guid: 06dc29351dd29c142aed843d892e3d07, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4378,6 +4385,10 @@ PrefabInstance:
     - target: {fileID: 5052438805353770660, guid: 220b5287eb2431c47a90316d3c0e7307, type: 3}
       propertyPath: m_Name
       value: Walking Enemy 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5052438805353770660, guid: 220b5287eb2431c47a90316d3c0e7307, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7036075595181726883, guid: 220b5287eb2431c47a90316d3c0e7307, type: 3}
       propertyPath: m_LocalPosition.x
@@ -35135,6 +35146,10 @@ PrefabInstance:
     - target: {fileID: 1634615040921164923, guid: b4987e18e3f0e3847ab1e5c226b6db61, type: 3}
       propertyPath: m_Name
       value: Walking Enemy 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1634615040921164923, guid: b4987e18e3f0e3847ab1e5c226b6db61, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5747608056403367469, guid: b4987e18e3f0e3847ab1e5c226b6db61, type: 3}
       propertyPath: m_LocalPosition.x
@@ -72745,6 +72760,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Walking Enemy 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3326309784288053342, guid: 06f149cd362d1b047885d0a5c71c47bc, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6620353654051879338, guid: 06f149cd362d1b047885d0a5c71c47bc, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.2288535
@@ -75210,13 +75229,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flying Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 959852337728200618, guid: 0f1d16f09c5fca1489bb618208b7a4b8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5325104756464413584, guid: 0f1d16f09c5fca1489bb618208b7a4b8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.23
+      value: -1.488
       objectReference: {fileID: 0}
     - target: {fileID: 5325104756464413584, guid: 0f1d16f09c5fca1489bb618208b7a4b8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.54
+      value: -0.416
       objectReference: {fileID: 0}
     - target: {fileID: 5325104756464413584, guid: 0f1d16f09c5fca1489bb618208b7a4b8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -75228,15 +75251,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5325104756464413584, guid: 0f1d16f09c5fca1489bb618208b7a4b8, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5325104756464413584, guid: 0f1d16f09c5fca1489bb618208b7a4b8, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5325104756464413584, guid: 0f1d16f09c5fca1489bb618208b7a4b8, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5325104756464413584, guid: 0f1d16f09c5fca1489bb618208b7a4b8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
