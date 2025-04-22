@@ -3,6 +3,15 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour 
 {
     [SerializeField] private float moveSpeed;
+    [Header("Dash Stats")]
+    [SerializeField] private float dashSpeed = 15f;
+    [SerializeField] private float dashDuration = 0.2f;
+    [SerializeField] private float dashCooldown = 1f;
+
+    private Vector2 dashDirection;
+    private bool isDashing;
+    private float dashTimer;
+    private float dashCooldownTimer;
 
     private Vector2 input;
     private Vector2 moveDirection;
@@ -50,10 +59,42 @@ public class PlayerController : MonoBehaviour
             meleeScript.enabled = !meleeScript.enabled;
             meleeGO.SetActive(!meleeGO.activeSelf);
         }
+
+        HandleDash();
     }
 
-    private void FixedUpdate() {
-        rb.linearVelocity = input * moveSpeed;
+    private void HandleDash()
+    {
+        if (dashCooldownTimer > 0) dashCooldownTimer -= Time.deltaTime;
+        if (isDashing)
+        {
+            dashTimer -= Time.deltaTime;
+            if (dashTimer <= 0f)
+            {
+                isDashing = false;
+            }
+            return;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space) && dashCooldownTimer <= 0f)
+        {
+            dashDirection = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
+            if (dashDirection != Vector2.zero)
+            {
+                isDashing = true;
+                dashTimer = dashDuration;
+                dashCooldownTimer = dashCooldown;
+                rb.linearVelocity = dashDirection * dashSpeed;
+            }
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        if(!isDashing)
+        {
+            rb.linearVelocity = input * moveSpeed;
+        }
     }
 
     private Vector2 Get8Direction(Vector2 input) {

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3937483442480188335}
   - component: {fileID: 1948493570564722792}
   - component: {fileID: 8478468736764412372}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Flying Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 959852337728200618}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.23, y: -1.54, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -181,6 +181,7 @@ MonoBehaviour:
   moveSpeed: 1
   maxHealth: 3
   collectiblePrefab: {fileID: 4656659322930194973, guid: d7389b911bfc82e4abb0b9901a9bb681, type: 3}
+  explosionPrefab: {fileID: 8355679478435999839, guid: 79272ff6fdb0d2640b691768ae4dd52a, type: 3}
 --- !u!114 &8478468736764412372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,7 +194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a52271274f1c1cd43bff48d8f8e9989d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 1693644118385698798, guid: 0025b27e91b62554799afbb95417406f, type: 3}
+  projectilePrefab: {fileID: 1693644118385698798, guid: d413472a1b4227842afd81eaf6db4897, type: 3}
   firePoint: {fileID: 2595721514956179266}
   health: 3
   attackRange: 5
@@ -208,7 +209,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2595721514956179266}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}

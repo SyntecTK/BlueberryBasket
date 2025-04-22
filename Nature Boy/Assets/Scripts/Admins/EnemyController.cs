@@ -7,6 +7,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private float moveSpeed;
     [SerializeField] private int maxHealth = 3;
     [SerializeField] private GameObject collectiblePrefab;
+    [SerializeField] private GameObject explosionPrefab;
 
     private int currentHealth;
     private Rigidbody2D rb;
@@ -39,6 +40,12 @@ public class EnemyController : MonoBehaviour
         if(collectiblePrefab != null)
         {
             Instantiate(collectiblePrefab, transform.position, Quaternion.identity);
+
+            //Ranged Enemies explode
+            if(GetComponent<ShooterBehaviour>() != null)
+            {
+                Instantiate(explosionPrefab, GetComponent<SpriteRenderer>().transform.position, Quaternion.identity);
+            }
         }
         Destroy(gameObject);
     }
