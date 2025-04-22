@@ -1,6 +1,7 @@
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour {
+public class PlayerController : MonoBehaviour 
+{
     [SerializeField] private float moveSpeed;
 
     private Vector2 input;
@@ -18,12 +19,16 @@ public class PlayerController : MonoBehaviour {
     private MeleeAttack meleeScript;
     [SerializeField] private GameObject meleeGO;
 
+    [SerializeField] private int maxHealth = 5;
+    private int currentHealth;
+
     void Start() {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
 
         shootingScript = GetComponent<Shooting>();
         meleeScript = GetComponent<MeleeAttack>();
+        currentHealth = maxHealth;
     }
 
     // Update is called once per frame
@@ -93,5 +98,11 @@ public class PlayerController : MonoBehaviour {
         scale.x *= -1;
         transform.localScale = scale;
         facingLeft = !facingLeft;
+    }
+
+    public void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+        GameManager.Instance.PlayerTookDamage(currentHealth);
     }
 }

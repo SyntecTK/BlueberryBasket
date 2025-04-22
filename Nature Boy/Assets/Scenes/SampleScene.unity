@@ -183,7 +183,7 @@ GameObject:
   - component: {fileID: 63416057}
   m_Layer: 0
   m_Name: Player Character
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -204,6 +204,7 @@ MonoBehaviour:
   staffGO: {fileID: 1222044247}
   crosshair: {fileID: 1665721770}
   meleeGO: {fileID: 1360064761}
+  maxHealth: 5
 --- !u!50 &63416050
 Rigidbody2D:
   serializedVersion: 5
@@ -339,7 +340,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.07516447}
+  m_Offset: {x: 0, y: 0.060469314}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -349,7 +350,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.13874057, y: 0.47161633}
+  m_Size: {x: 0.13874057, y: 0.7428839}
   m_EdgeRadius: 0
 --- !u!95 &63416054
 Animator:
@@ -385,6 +386,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2122301c54153184b8ae43d303893545, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 63416048}
   firePoint: {fileID: 268558612}
   bulletPrefab: {fileID: 1693644118385698798, guid: 0025b27e91b62554799afbb95417406f, type: 3}
   bulletSpeed: 20
@@ -4298,7 +4300,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 2.8125
+  orthographic size: 4.1796875
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -71316,7 +71318,7 @@ Transform:
   m_GameObject: {fileID: 1001106858}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.047, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

@@ -33,7 +33,13 @@ public class ShooterBehaviour : EnemyBase
         //Shoot at player
         else if (distance <= attackRange)
         {
-            rb.linearVelocity = Vector2.zero;
+            hoverChangeTimer -= Time.deltaTime;
+            if (hoverChangeTimer <= 0)
+            {
+                PickNewHoverDirection();
+            }
+
+            rb.linearVelocity = hoverDirection * hoverSpeed;
 
             if (Time.time > lastShootTime + shootCooldown)
             {
@@ -74,8 +80,9 @@ public class ShooterBehaviour : EnemyBase
 
     void ShootAtPlayer(Vector2 dir)
     {
-        Vector2 shootDir = SnapTo8Directions(dir);
+        Vector2 shootDir = dir.normalized;
         GameObject proj = Instantiate(projectilePrefab, firePoint.position, Quaternion.identity);
         proj.GetComponent<Rigidbody2D>().linearVelocity = shootDir * 10f;
+        proj.GetComponent<Bullet>().SetOriginObject(gameObject);
     }
 }

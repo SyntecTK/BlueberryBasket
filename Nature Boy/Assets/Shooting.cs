@@ -3,6 +3,7 @@ using UnityEngine.InputSystem;
 
 public class Shooting : MonoBehaviour
 {
+    [SerializeField] private GameObject player;
     [SerializeField] private Transform firePoint;
     [SerializeField] private GameObject bulletPrefab;
 
@@ -39,6 +40,7 @@ public class Shooting : MonoBehaviour
     private void FireBullet()
     {
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        bullet.GetComponent<Bullet>().SetOriginObject(player);
         Rigidbody2D rigidbody = bullet.GetComponent<Rigidbody2D>();
 
         rigidbody.linearVelocity = bulletSpeed * firePoint.up;

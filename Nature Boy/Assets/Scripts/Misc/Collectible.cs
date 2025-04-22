@@ -38,7 +38,6 @@ public class Collectible : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Trigger enter");
         if (collision.transform.tag == "Player")
         {
             GameManager.Instance?.CollectiblePickedUp();

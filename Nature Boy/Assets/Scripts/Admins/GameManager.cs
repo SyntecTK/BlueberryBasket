@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
     public static event Action OnCollectiblePickedUp;
     private int currentCollectibles = 0;
 
+    public static event Action<int> OnPlayerDamaged;
+
     private void Awake()
     {
         if (Instance == null)
@@ -35,5 +37,10 @@ public class GameManager : MonoBehaviour
     public int GetCollectibleCount()
     {
         return currentCollectibles;
+    }
+
+    public void PlayerTookDamage(int currentHealth)
+    {
+        OnPlayerDamaged?.Invoke(currentHealth);
     }
 }

@@ -12,6 +12,12 @@ public class UIController : MonoBehaviour {
     private void Awake() {
         instance = this;
         GameManager.OnCollectiblePickedUp += UpdateCollectibleScore;
+        GameManager.OnPlayerDamaged += UpdateHealthBar;
+    }
+
+    private void OnDestroy()
+    {
+        GameManager.OnCollectiblePickedUp -= UpdateCollectibleScore;
     }
 
     public Image fadeScreen;
@@ -73,6 +79,10 @@ public class UIController : MonoBehaviour {
     {
         coinText.text = GameManager.Instance.GetCollectibleCount().ToString();
     }
+    private void UpdateHealthBar(int currentHealth)
+    {
+        healthSlider.value = currentHealth;
+    }
     public void PauseUnpause() {
         pauseScreen.SetActive(!pauseScreen.activeSelf);
         if (pauseScreen.activeSelf) {
@@ -83,6 +93,7 @@ public class UIController : MonoBehaviour {
             Time.timeScale = 1;
         }
     }
+
 
     public void GoToMainMenu() {
         Time.timeScale = 1;
