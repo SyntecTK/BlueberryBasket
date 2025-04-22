@@ -177,11 +177,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29e1294926a398a4bbec8f755fc0d362, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyType: 1
   behaviour: {fileID: 8478468736764412372}
-  moveSpeed: 1
-  maxHealth: 3
   collectiblePrefab: {fileID: 4656659322930194973, guid: d7389b911bfc82e4abb0b9901a9bb681, type: 3}
   explosionPrefab: {fileID: 8355679478435999839, guid: 79272ff6fdb0d2640b691768ae4dd52a, type: 3}
+  moveSpeed: 1
+  maxHealth: 3
 --- !u!114 &8478468736764412372
 MonoBehaviour:
   m_ObjectHideFlags: 0

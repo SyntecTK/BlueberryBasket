@@ -3,11 +3,21 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
+    public enum EnemyType
+    {
+        Human,
+        Robot,
+        Building
+    }
+    [Header ("Type"), SerializeField] private EnemyType enemyType;
+    public EnemyType Type => enemyType;
+    [Header ("Components")]
     [SerializeField] private EnemyBase behaviour;
-    [SerializeField] private float moveSpeed;
-    [SerializeField] private int maxHealth = 3;
     [SerializeField] private GameObject collectiblePrefab;
     [SerializeField] private GameObject explosionPrefab;
+    [Header("Stats")]
+    [SerializeField] private float moveSpeed;
+    [SerializeField] private int maxHealth = 3;
 
     private int currentHealth;
     private Rigidbody2D rb;
