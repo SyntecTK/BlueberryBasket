@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4056430279356694156}
   - component: {fileID: 3783634584402439417}
   - component: {fileID: 8436004582877577522}
+  - component: {fileID: 5951594361723692070}
   m_Layer: 6
   m_Name: Walking Enemy 2
   m_TagString: Enemy
@@ -176,10 +177,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29e1294926a398a4bbec8f755fc0d362, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyType: 0
   behaviour: {fileID: 8436004582877577522}
+  collectiblePrefab: {fileID: 4656659322930194973, guid: 85ea635e294fce84ea21e249edf51c7f, type: 3}
+  explosionPrefab: {fileID: 0}
   moveSpeed: 1
   maxHealth: 3
-  collectiblePrefab: {fileID: 4656659322930194973, guid: d7389b911bfc82e4abb0b9901a9bb681, type: 3}
 --- !u!114 &8436004582877577522
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,3 +196,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 2
+--- !u!95 &5951594361723692070
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8688577103303463205}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 83a6f100ee5ad2b4fae03c791deed79e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

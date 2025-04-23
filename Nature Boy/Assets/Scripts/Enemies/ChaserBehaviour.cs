@@ -1,13 +1,13 @@
 
 using UnityEngine;
 
-public class ChaserBehaviour : EnemyBase
-{
+public class ChaserBehaviour : EnemyBase {
     [SerializeField] private int health;
-    public override void Act(Transform player, Rigidbody2D rb, float moveSpeed)
-    {
+    public override void Act(Transform player, Rigidbody2D rb, float moveSpeed) {
         Vector2 dir = player.position - transform.position;
         Vector2 moveDir = SnapTo8Directions(dir);
         rb.linearVelocity = moveDir * moveSpeed;
+
+        transform.localScale = new Vector3(dir.x < 0 ? -1 : 1, 1, 1);
     }
 }
