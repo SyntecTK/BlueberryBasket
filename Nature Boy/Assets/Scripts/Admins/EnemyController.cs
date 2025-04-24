@@ -50,12 +50,11 @@ public class EnemyController : MonoBehaviour
         if(collectiblePrefab != null)
         {
             Instantiate(collectiblePrefab, transform.position, Quaternion.identity);
-
-            //Ranged Enemies explode
-            if(GetComponent<ShooterBehaviour>() != null)
+            GameObject explosion = Instantiate(explosionPrefab, GetComponent<SpriteRenderer>().transform.position, Quaternion.identity);
+            explosion.GetComponent<DestroyAnimation>().Initialize(this);
+            if(GetComponent<ChaserBehaviour>() != null)
             {
-                GameObject explosion = Instantiate(explosionPrefab, GetComponent<SpriteRenderer>().transform.position, Quaternion.identity);
-                explosion.GetComponent<DestroyAnimation>().Initialize(this);
+                explosion.GetComponent<DestroyAnimation>().DoubleSize();
             }
         }
         Destroy(gameObject);

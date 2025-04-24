@@ -72094,13 +72094,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1037363992}
     m_Modifications:
+    - target: {fileID: 2624541967935739975, guid: 06f149cd362d1b047885d0a5c71c47bc, type: 3}
+      propertyPath: chaseRange
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3326309784288053342, guid: 06f149cd362d1b047885d0a5c71c47bc, type: 3}
       propertyPath: m_Name
       value: Walking Enemy 1
       objectReference: {fileID: 0}
     - target: {fileID: 3326309784288053342, guid: 06f149cd362d1b047885d0a5c71c47bc, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6620353654051879338, guid: 06f149cd362d1b047885d0a5c71c47bc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -74325,6 +74329,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 62807491176457625, guid: ffa8e165a1ee9b647a64320dfd088e9a, type: 3}
+      propertyPath: orthographic size
+      value: 4.8515625
+      objectReference: {fileID: 0}
     - target: {fileID: 1851078858041749647, guid: ffa8e165a1ee9b647a64320dfd088e9a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.44

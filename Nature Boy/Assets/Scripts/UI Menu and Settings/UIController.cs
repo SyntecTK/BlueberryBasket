@@ -83,7 +83,10 @@ public class UIController : MonoBehaviour {
     }
     private void UpdateHealthBar(int currentHealth)
     {
-        healthSlider.value = currentHealth;
+        if (healthSlider != null)
+        {
+            healthSlider.value = currentHealth;
+        }
     }
 
     public void PauseUnpause() {

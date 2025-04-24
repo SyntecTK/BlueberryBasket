@@ -9,8 +9,6 @@ public class DestroyAnimation : MonoBehaviour
     public void Initialize(EnemyController enemy)
     {
         animator = GetComponent<Animator>();
-        Debug.Log($"Animator: {animator}");
-        Debug.Log($"Enemy: {enemy}");
 
         if(enemy != null && animator != null)
         {
@@ -29,12 +27,16 @@ public class DestroyAnimation : MonoBehaviour
                     animation = "NormalExplosion";
                     break;
             }
-            Debug.Log($"Playing animation {animation}");
             animator.Play(animation);
         }
     }
     public void DestroyAfterAnimation()
     {
         Destroy(gameObject);
+    }
+
+    public void DoubleSize()
+    {
+        transform.localScale = new Vector3(2f, transform.localScale.y * 2, transform.localScale.z * 2);
     }
 }

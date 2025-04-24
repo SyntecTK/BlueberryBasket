@@ -180,7 +180,7 @@ MonoBehaviour:
   enemyType: 0
   behaviour: {fileID: 3444674989566815700}
   collectiblePrefab: {fileID: 4656659322930194973, guid: 85ea635e294fce84ea21e249edf51c7f, type: 3}
-  explosionPrefab: {fileID: 0}
+  explosionPrefab: {fileID: 8355679478435999839, guid: 79272ff6fdb0d2640b691768ae4dd52a, type: 3}
   moveSpeed: 1
   maxHealth: 3
 --- !u!114 &3444674989566815700
