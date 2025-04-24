@@ -16,7 +16,7 @@ public class BabyBehaviour : MonoBehaviour
     {
         if(isFollowing)
         {
-            Vector3 targetPos = player.transform.position - player.transform.forward * (1.5f * followIndex);
+            Vector3 targetPos = player.transform.position + player.transform.up * (0.3f * followIndex);
             transform.position = Vector3.Lerp(transform.position, targetPos, Time.deltaTime * 2f);
         }
     }
@@ -25,5 +25,6 @@ public class BabyBehaviour : MonoBehaviour
     {
         isFollowing = true;
         followIndex = GameManager.Instance.RegisterBaby();
+        Debug.Log("FollowIndex: "+followIndex);
     }
 }
