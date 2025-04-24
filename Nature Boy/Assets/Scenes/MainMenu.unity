@@ -4232,7 +4232,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f65093ad8117a004288f50e24af3db1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstLevel: SampleScene
+  firstLevel: Type
 --- !u!114 &1618070283
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4262,12 +4262,16 @@ MonoBehaviour:
   fadeScreen: {fileID: 0}
   fadeSpeed: 1
   healthSlider: {fileID: 0}
+  natureSlider: {fileID: 0}
   healthText: {fileID: 0}
   timeText: {fileID: 0}
   dieText: {fileID: 0}
   coinText: {fileID: 0}
   pauseScreen: {fileID: 1681437881}
   settingsScreen: {fileID: 712284839}
+  gameOverScreen: {fileID: 0}
+  winText: {fileID: 0}
+  loseText: {fileID: 0}
   mainMenu: 
   levelSelect: 
 --- !u!1 &1642283218

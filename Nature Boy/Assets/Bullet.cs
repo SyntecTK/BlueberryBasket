@@ -45,6 +45,15 @@ public class Bullet : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+        else if(collision.transform.tag == "Cage")
+        {
+            Cage cage = collision.gameObject.GetComponent<Cage>();
+            if(cage != null)
+            {
+                cage.TakeDamage(damage);
+                Destroy(gameObject);
+            }
+        }
         else
         {
             Destroy(gameObject);

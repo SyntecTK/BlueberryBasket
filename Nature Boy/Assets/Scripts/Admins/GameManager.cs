@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     private int currentCollectibles = 0;
     private int currentNatureValue = 0;
     private int neededNatureValue = 20;
+    private int babyCount = 0;
 
     public bool GameWon => gameWon;
     private bool gameWon = false;
@@ -78,5 +79,11 @@ public class GameManager : MonoBehaviour
         {
             GameOver?.Invoke();
         }
+    }
+
+    public int RegisterBaby()
+    {
+        babyCount++;
+        return babyCount;
     }
 }

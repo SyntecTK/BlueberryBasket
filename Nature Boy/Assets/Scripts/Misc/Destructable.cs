@@ -5,7 +5,7 @@ using UnityEngine;
 public class Destructable : MonoBehaviour
 {
     [Header ("Stats")]
-    [SerializeField] float health;
+    [SerializeField] private float health;
     [SerializeField] private float interactionRange = 5f;
     [SerializeField] private GameObject interactionPrompt;
     [Header("Collectibles")]
