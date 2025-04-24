@@ -20,11 +20,11 @@ public class PlayerController : MonoBehaviour
     private Vector2 lastMoveDirection;
     private bool facingLeft = true;
 
-    private bool shootingActive = true;
+    public bool shootingActive { get; private set; } = true;
     private Shooting shootingScript;
     [SerializeField] private GameObject staffGO;
     [SerializeField] private GameObject crosshair;
-    private bool meleeActive = false;
+    public bool meleeActive { get; private set; } = false;
     private MeleeAttack meleeScript;
     [SerializeField] private GameObject meleeGO;
 
