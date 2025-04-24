@@ -49,7 +49,7 @@ public class Collectible : MonoBehaviour
         {
             if(type == CollectibleType.Flower)
             {
-                GameManager.Instance.PicketUpFlower();
+                GameManager.Instance.PickedUpFlower();
             }else if(type == CollectibleType.Leaf)
             {
                 GameManager.Instance.PickedUpLeaf();

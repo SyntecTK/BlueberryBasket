@@ -32,7 +32,10 @@ public class EnemyController : MonoBehaviour
 
     private void Update()
     {
-        behaviour?.Act(player, rb, moveSpeed);
+        if (enemyType != EnemyType.Building)
+        {
+            behaviour.Act(player, rb, moveSpeed);        
+        }
     }
 
     public void TakeDamage(int damage)
@@ -47,7 +50,7 @@ public class EnemyController : MonoBehaviour
 
     private void TriggerDeath()
     {
-        if(collectiblePrefab != null)
+        if(enemyType != EnemyType.Building && collectiblePrefab != null)
         {
             Instantiate(collectiblePrefab, transform.position, Quaternion.identity);
             GameObject explosion = Instantiate(explosionPrefab, GetComponent<SpriteRenderer>().transform.position, Quaternion.identity);
@@ -56,7 +59,7 @@ public class EnemyController : MonoBehaviour
             {
                 explosion.GetComponent<DestroyAnimation>().DoubleSize();
             }
+            Destroy(gameObject);
         }
-        Destroy(gameObject);
     }
 }

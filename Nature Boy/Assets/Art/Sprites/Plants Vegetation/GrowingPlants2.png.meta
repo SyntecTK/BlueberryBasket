@@ -1,22 +1,16 @@
 fileFormatVersion: 2
-guid: 33685ae805e504d48aa9be9e11b03a7b
+guid: b6b077a90b4abe24fb59e6d8cbbc8647
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2691640718462685807
-    second: buildings-shadows-1_0
+      213: -7076049620075610690
+    second: GrowingPlants2_0
   - first:
-      213: -937373284660370490
-    second: buildings-shadows-1_1
+      213: -1608578335087110275
+    second: GrowingPlants2_1
   - first:
-      213: -4829288583079207837
-    second: buildings-shadows-1_2
-  - first:
-      213: 849653133552818155
-    second: buildings-shadows-1_3
-  - first:
-      213: -9029335530893005275
-    second: buildings-shadows-1_4
+      213: -8172193088811376252
+    second: GrowingPlants2_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -87,7 +81,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -112,111 +106,67 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: buildings-shadows-1_0
+      name: GrowingPlants2_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 275
-        width: 193
-        height: 192
-      alignment: 9
-      pivot: {x: 0.16393669, y: 0.23207872}
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f6212f6f8f0aa5520800000000000000
-      internalID: 2691640718462685807
+      spriteID: ebdfa5e6c52dccd90800000000000000
+      internalID: -7076049620075610690
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: buildings-shadows-1_1
+      name: GrowingPlants2_1
       rect:
         serializedVersion: 2
-        x: 207
-        y: 275
-        width: 251
-        height: 114
-      alignment: 9
-      pivot: {x: 0.25718635, y: 0.46566665}
+        x: 64
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6c3a0e9c6f7cdf2f0800000000000000
-      internalID: -937373284660370490
+      spriteID: d775ebfd68e2da9e0800000000000000
+      internalID: -1608578335087110275
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: buildings-shadows-1_2
+      name: GrowingPlants2_2
       rect:
         serializedVersion: 2
-        x: 0
-        y: 19
-        width: 318
-        height: 242
-      alignment: 9
-      pivot: {x: 0.19933058, y: 0.2458456}
+        x: 128
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 36cd6bfce9beafcb0800000000000000
-      internalID: -4829288583079207837
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: buildings-shadows-1_3
-      rect:
-        serializedVersion: 2
-        x: 449
-        y: 147
-        width: 80
-        height: 82
-      alignment: 9
-      pivot: {x: 0.25537604, y: 0.35680574}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: be796b7f5039acb00800000000000000
-      internalID: 849653133552818155
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: buildings-shadows-1_4
-      rect:
-        serializedVersion: 2
-        x: 367
-        y: 7
-        width: 146
-        height: 126
-      alignment: 9
-      pivot: {x: 0.22426009, y: 0.3668715}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 52e2f439c2b51b280800000000000000
-      internalID: -9029335530893005275
+      spriteID: 481ee711fa9869e80800000000000000
+      internalID: -8172193088811376252
       vertices: []
       indices: 
       edges: []
@@ -225,7 +175,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: db4bd2520d5d61a4d800f3ffc7489bd3
+    spriteID: 5a4b7db550155c149bdf116dd493d116
     internalID: 0
     vertices: []
     indices: 
@@ -235,11 +185,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      buildings-shadows-1_0: 2691640718462685807
-      buildings-shadows-1_1: -937373284660370490
-      buildings-shadows-1_2: -4829288583079207837
-      buildings-shadows-1_3: 849653133552818155
-      buildings-shadows-1_4: -9029335530893005275
+      GrowingPlants2_0: -7076049620075610690
+      GrowingPlants2_1: -1608578335087110275
+      GrowingPlants2_2: -8172193088811376252
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

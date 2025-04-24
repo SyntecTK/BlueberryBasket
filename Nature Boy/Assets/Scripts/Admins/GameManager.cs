@@ -1,4 +1,5 @@
 using System;
+using UnityEditor;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -9,8 +10,13 @@ public class GameManager : MonoBehaviour
     public static event Action<int> OnPlayerLifeChange;
     public static event Action<int> OnLeafPickedUp;
     public static event Action OnCollectiblePickedUp;
+    public static event Action GameOver;
     private int currentCollectibles = 0;
     private int currentNatureValue = 0;
+    private int neededNatureValue = 20;
+
+    public bool GameWon => gameWon;
+    private bool gameWon = false;
 
 
     private void Awake()
@@ -49,7 +55,7 @@ public class GameManager : MonoBehaviour
     }
     #endregion
     #region Flower
-    public void PicketUpFlower()
+    public void PickedUpFlower()
     {
         player.Heal(1);
     }
@@ -58,10 +64,19 @@ public class GameManager : MonoBehaviour
     {
         currentNatureValue++;
         OnLeafPickedUp?.Invoke(currentNatureValue);
+        if(currentNatureValue == neededNatureValue)
+        {
+            gameWon = true;
+            GameOver?.Invoke();
+        }
     }
     #endregion
     public void UpdatePlayerLife(int currentHealth)
     {
         OnPlayerLifeChange?.Invoke(currentHealth);
+        if(currentHealth <= 0)
+        {
+            GameOver?.Invoke();
+        }
     }
 }

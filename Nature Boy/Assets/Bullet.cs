@@ -30,7 +30,10 @@ public class Bullet : MonoBehaviour
         else if (collision.transform.tag == "Destroyable")
         {
             Destructable destructable = collision.transform.GetComponent<Destructable>();
-            destructable.TakeDamage(damage);
+            if(destructable != null)
+            {
+                destructable.TakeDamage(damage);
+            }
             Destroy(gameObject);
         }
         else if(collision.transform.tag == "Player")

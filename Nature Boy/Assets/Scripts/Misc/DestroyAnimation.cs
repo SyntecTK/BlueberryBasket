@@ -33,6 +33,16 @@ public class DestroyAnimation : MonoBehaviour
             audioSource.Play();
         }
     }
+
+    public void PlayBuildingAnimation()
+    {
+        animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
+        //DoubleSize();
+        animator.Play("NormalExplosion");
+        Debug.Log("Animation Playing");
+        audioSource.Play();
+    }
     public void DestroyAfterAnimation()
     {
         Destroy(gameObject);

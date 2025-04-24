@@ -1,22 +1,25 @@
 fileFormatVersion: 2
-guid: 33685ae805e504d48aa9be9e11b03a7b
+guid: cfffc5ad707695540b1bc8e42c481cb0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2691640718462685807
-    second: buildings-shadows-1_0
+      213: 7233259159556052801
+    second: buildings-destroyed_0
   - first:
-      213: -937373284660370490
-    second: buildings-shadows-1_1
+      213: 6130048720838953942
+    second: buildings-destroyed_1
   - first:
-      213: -4829288583079207837
-    second: buildings-shadows-1_2
+      213: -3018354683770196603
+    second: buildings-destroyed_2
   - first:
-      213: 849653133552818155
-    second: buildings-shadows-1_3
+      213: -6010316843942270119
+    second: buildings-destroyed_3
   - first:
-      213: -9029335530893005275
-    second: buildings-shadows-1_4
+      213: -6150183800836597731
+    second: buildings-destroyed_4
+  - first:
+      213: 4033421415185503558
+    second: buildings-destroyed_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -87,7 +90,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -112,111 +115,89 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: buildings-shadows-1_0
+      name: buildings-destroyed_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 275
-        width: 193
-        height: 192
-      alignment: 9
-      pivot: {x: 0.16393669, y: 0.23207872}
+        y: 80
+        width: 65
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f6212f6f8f0aa5520800000000000000
-      internalID: 2691640718462685807
+      spriteID: 147dda5d1e2b16460800000000000000
+      internalID: 7233259159556052801
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: buildings-shadows-1_1
+      name: buildings-destroyed_1
       rect:
         serializedVersion: 2
-        x: 207
-        y: 275
-        width: 251
-        height: 114
+        x: 79
+        y: 79
+        width: 129
+        height: 59
       alignment: 9
-      pivot: {x: 0.25718635, y: 0.46566665}
+      pivot: {x: 0.5, y: 0.9898852}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6c3a0e9c6f7cdf2f0800000000000000
-      internalID: -937373284660370490
+      spriteID: 6db817d45de421550800000000000000
+      internalID: 6130048720838953942
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: buildings-shadows-1_2
+      name: buildings-destroyed_2
       rect:
         serializedVersion: 2
         x: 0
-        y: 19
-        width: 318
-        height: 242
-      alignment: 9
-      pivot: {x: 0.19933058, y: 0.2458456}
+        y: 3
+        width: 65
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 36cd6bfce9beafcb0800000000000000
-      internalID: -4829288583079207837
+      spriteID: 58dadb33866ac16d0800000000000000
+      internalID: -3018354683770196603
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: buildings-shadows-1_3
+      name: buildings-destroyed_4
       rect:
         serializedVersion: 2
-        x: 449
-        y: 147
-        width: 80
-        height: 82
-      alignment: 9
-      pivot: {x: 0.25537604, y: 0.35680574}
+        x: 98
+        y: 14
+        width: 45
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: be796b7f5039acb00800000000000000
-      internalID: 849653133552818155
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: buildings-shadows-1_4
-      rect:
-        serializedVersion: 2
-        x: 367
-        y: 7
-        width: 146
-        height: 126
-      alignment: 9
-      pivot: {x: 0.22426009, y: 0.3668715}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 52e2f439c2b51b280800000000000000
-      internalID: -9029335530893005275
+      spriteID: d18d5cf0b6826aaa0800000000000000
+      internalID: -6150183800836597731
       vertices: []
       indices: 
       edges: []
@@ -225,7 +206,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: db4bd2520d5d61a4d800f3ffc7489bd3
+    spriteID: 32d9da64b29aa044490b89cd8a5826dc
     internalID: 0
     vertices: []
     indices: 
@@ -235,11 +216,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      buildings-shadows-1_0: 2691640718462685807
-      buildings-shadows-1_1: -937373284660370490
-      buildings-shadows-1_2: -4829288583079207837
-      buildings-shadows-1_3: 849653133552818155
-      buildings-shadows-1_4: -9029335530893005275
+      buildings-destroyed_0: 7233259159556052801
+      buildings-destroyed_1: 6130048720838953942
+      buildings-destroyed_2: -3018354683770196603
+      buildings-destroyed_3: -6010316843942270119
+      buildings-destroyed_4: -6150183800836597731
+      buildings-destroyed_5: 4033421415185503558
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

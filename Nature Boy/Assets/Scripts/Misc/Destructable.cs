@@ -13,8 +13,12 @@ public class Destructable : MonoBehaviour
     [SerializeField] private GameObject flowerPrefab;
     [SerializeField] private GameObject leafPrefab;
     [SerializeField] private int collectibleCount;
-    [Header("Sprites"), SerializeField] private Sprite destroyedSprite;
+    [Header("Sprites/Animations"), SerializeField] private Sprite destroyedSprite;
     [SerializeField] private Sprite treeSprite;
+    [SerializeField] private Transform treePos;
+    [SerializeField] private GameObject plantGrowAnimationPrefab;
+    [SerializeField] private GameObject explosionPrefab;
+
 
     private Transform player;
     private bool isInRange = false;
@@ -61,9 +65,12 @@ public class Destructable : MonoBehaviour
     public void TakeDamage(float damage)
     {
         health -= damage;
-        if(health < 0)
+        if(health <= 0 && !isDestroyed)
         {
             isDestroyed = true;
+            //GetComponent<BoxCollider2D>().enabled = false;
+            GameObject explosion = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+            explosion.GetComponent<DestroyAnimation>().PlayBuildingAnimation();
             ChangeToDestroyedSprite();
         }
     }
@@ -80,7 +87,7 @@ public class Destructable : MonoBehaviour
             for(int i = 0; i < requiredCrystals; i++)
             {
                 GameObject prefabToSpawn = Random.value < 0.5f ? flowerPrefab : leafPrefab;
-                Instantiate(prefabToSpawn, transform.position, Quaternion.identity);
+                Instantiate(prefabToSpawn, treePos.position, Quaternion.identity);
             }
         }
         else

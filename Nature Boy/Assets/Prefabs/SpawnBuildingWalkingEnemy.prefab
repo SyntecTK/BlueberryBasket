@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1741407486071376035}
   - component: {fileID: 8012423978936745253}
-  - component: {fileID: 8320655122438050275}
   - component: {fileID: 2804942932411881681}
+  - component: {fileID: 8320655122438050275}
   - component: {fileID: 2340920811653218259}
   m_Layer: 0
   m_Name: SpawnBuildingWalkingEnemy
-  m_TagString: Untagged
+  m_TagString: Destroyable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35,6 +35,7 @@ Transform:
   m_Children:
   - {fileID: 4841254875044740748}
   - {fileID: 717334509046377283}
+  - {fileID: 8154623808311310193}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8012423978936745253
@@ -80,7 +81,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 99
   m_Sprite: {fileID: -4829288583079207837, guid: 33685ae805e504d48aa9be9e11b03a7b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -92,21 +93,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8320655122438050275
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 267570232106783018}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b45e2fce380be64187be6be97df4a93, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 8688577103303463205, guid: 06dc29351dd29c142aed843d892e3d07, type: 3}
-  spawnPoint: {fileID: 717334509046377283}
-  spawnInterval: 5
 --- !u!61 &2804942932411881681
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -141,18 +127,33 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -1.5186458, y: 0.32073212}
+  m_Offset: {x: -0.019999266, y: -0.3544824}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.19933058, y: 0.2458456}
     oldSize: {x: 4.96875, y: 3.78125}
     newSize: {x: 4.96875, y: 3.78125}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.9314585, y: 3.1397858}
+  m_Size: {x: 1.9863536, y: 1.1086526}
   m_EdgeRadius: 0
+--- !u!114 &8320655122438050275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 267570232106783018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b45e2fce380be64187be6be97df4a93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefab: {fileID: 8688577103303463205, guid: 06dc29351dd29c142aed843d892e3d07, type: 3}
+  spawnPoint: {fileID: 717334509046377283}
+  spawnInterval: 5
 --- !u!114 &2340920811653218259
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,6 +166,49 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e67de88eb9f64c4481a31b39ade9c01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 10
+  interactionRange: 5
+  interactionPrompt: {fileID: 0}
+  requiredCrystals: 3
+  flowerPrefab: {fileID: 4656659322930194973, guid: d7389b911bfc82e4abb0b9901a9bb681, type: 3}
+  leafPrefab: {fileID: 4656659322930194973, guid: be17ffab7bd99a8458fd3a6aee3063e3, type: 3}
+  collectibleCount: 3
+  destroyedSprite: {fileID: 4892014929872665467, guid: 717d363365519df49ab097e6ddf7318a, type: 3}
+  treeSprite: {fileID: 21300000, guid: 988bdd83e6a53b347bf5c5d932cce1ee, type: 3}
+  treePos: {fileID: 8154623808311310193}
+  plantGrowAnimationPrefab: {fileID: 2094900086839106015, guid: 60278c15fa262354998d77a37e4c7b5c, type: 3}
+  explosionPrefab: {fileID: 8355679478435999839, guid: 79272ff6fdb0d2640b691768ae4dd52a, type: 3}
+--- !u!1 &3608138634508565762
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8154623808311310193}
+  m_Layer: 0
+  m_Name: SpawnPoint Tree
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8154623808311310193
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3608138634508565762}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.51, y: -0.02, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1741407486071376035}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7626364129662006869
 GameObject:
   m_ObjectHideFlags: 0

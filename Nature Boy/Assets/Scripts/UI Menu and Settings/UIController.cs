@@ -14,6 +14,7 @@ public class UIController : MonoBehaviour {
         GameManager.OnCollectiblePickedUp += UpdateCollectibleScore;
         GameManager.OnPlayerLifeChange += UpdateHealthBar;
         GameManager.OnLeafPickedUp += UpdateNatureBar;
+        GameManager.GameOver += ShowEndScreen;
     }
 
     private void OnDestroy()
@@ -21,6 +22,7 @@ public class UIController : MonoBehaviour {
         GameManager.OnPlayerLifeChange += UpdateHealthBar;
         GameManager.OnCollectiblePickedUp -= UpdateCollectibleScore;
         GameManager.OnLeafPickedUp -= UpdateNatureBar;
+        GameManager.GameOver -= ShowEndScreen;
     }
 
     public Image fadeScreen;
@@ -35,6 +37,10 @@ public class UIController : MonoBehaviour {
 
     public GameObject pauseScreen;
     public GameObject settingsScreen;
+
+    public GameObject gameOverScreen;
+    public GameObject winText;
+    public GameObject loseText;
 
     public string mainMenu, levelSelect;
 
@@ -97,6 +103,22 @@ public class UIController : MonoBehaviour {
         if(natureSlider != null)
         {
             natureSlider.value = currentNature;
+        }
+    }
+
+    private void ShowEndScreen()
+    {
+        gameOverScreen.SetActive(true);
+        Time.timeScale = 0;
+        if(GameManager.Instance.GameWon)
+        {
+            winText.SetActive(true);
+            loseText.SetActive(false);
+        }
+        else
+        {
+            winText.SetActive(false);
+            loseText.SetActive(true);
         }
     }
 
