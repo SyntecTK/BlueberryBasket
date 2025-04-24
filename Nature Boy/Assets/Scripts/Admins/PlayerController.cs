@@ -24,9 +24,11 @@ public class PlayerController : MonoBehaviour
     private Shooting shootingScript;
     [SerializeField] private GameObject staffGO;
     [SerializeField] private GameObject crosshair;
+    private RuntimeAnimatorController shootingAnim;
     public bool meleeActive { get; private set; } = false;
     private MeleeAttack meleeScript;
     [SerializeField] private GameObject meleeGO;
+    [SerializeField] private RuntimeAnimatorController meleeAnim;
 
     [SerializeField] private int maxHealth = 5;
     private int currentHealth;
@@ -34,6 +36,7 @@ public class PlayerController : MonoBehaviour
     void Start() {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        shootingAnim = anim.runtimeAnimatorController;
 
         shootingScript = GetComponent<Shooting>();
         meleeScript = GetComponent<MeleeAttack>();
@@ -58,6 +61,19 @@ public class PlayerController : MonoBehaviour
             meleeActive = !meleeActive;
             meleeScript.enabled = !meleeScript.enabled;
             meleeGO.SetActive(!meleeGO.activeSelf);
+
+            if (meleeActive)
+            {
+                anim.runtimeAnimatorController = meleeAnim;
+                anim.Rebind();
+                anim.Update(0f);
+
+                Debug.Log("Animator switched to: " + anim.runtimeAnimatorController.name);
+            }
+            else
+            {
+                anim.runtimeAnimatorController = shootingAnim;
+            }
         }
 
         HandleDash();
