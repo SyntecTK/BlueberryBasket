@@ -39,6 +39,12 @@ public class GameManager : MonoBehaviour
         return currentCollectibles;
     }
 
+    public void RemoveCollectibles(int count)
+    {
+        currentCollectibles = currentCollectibles - count;
+        OnCollectiblePickedUp?.Invoke();
+    }
+
     public void PlayerTookDamage(int currentHealth)
     {
         OnPlayerDamaged?.Invoke(currentHealth);

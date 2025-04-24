@@ -29,7 +29,9 @@ public class Bullet : MonoBehaviour
         }
         else if (collision.transform.tag == "Destroyable")
         {
-            //Destroyableobject.TakeDamage || DestroyableObject.GetDestroyed
+            Destructable destructable = collision.transform.GetComponent<Destructable>();
+            destructable.TakeDamage(damage);
+            Destroy(gameObject);
         }
         else if(collision.transform.tag == "Player")
         {

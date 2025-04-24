@@ -1,0 +1,92 @@
+using System.Collections;
+using TMPro;
+using UnityEngine;
+
+public class Destructable : MonoBehaviour
+{
+    [SerializeField] float health;
+    [SerializeField] private float interactionRange = 5f;
+    [SerializeField] private int requiredCollectibles = 3;
+    [SerializeField] private GameObject interactionPrompt;
+    [Header("Sprites"), SerializeField] private Sprite destroyedSprite;
+    [SerializeField] private Sprite treeSprite;
+
+    private Transform player;
+    private bool isInRange = false;
+    private bool isDestroyed = false;
+    private bool isRestored = false;
+    private TMP_Text interactionText;
+    private TMP_Text tipText;
+    private string originalTipText;
+
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+        TMP_Text[] textComponents = interactionPrompt.GetComponentsInChildren<TMP_Text>();
+        interactionText = textComponents[0];
+        tipText = textComponents[1];
+        originalTipText = tipText.text;
+    }
+
+    private void Update()
+    {
+        Vector2 toPlayer = player.position - transform.position;
+        float distance = toPlayer.magnitude;
+
+        if (distance < interactionRange && isDestroyed)
+        {
+            isInRange = true;
+            interactionText.text = requiredCollectibles.ToString();
+            if(!isRestored)
+            {
+                interactionPrompt.SetActive(true);
+            }
+            if(Input.GetMouseButtonDown(1))
+            {
+                TryInteract();
+            }
+        }
+        else
+        {
+            isInRange = false;
+            interactionPrompt.SetActive(isInRange);
+        }
+    }
+
+    public void TakeDamage(float damage)
+    {
+        health -= damage;
+        if(health < 0)
+        {
+            isDestroyed = true;
+            ChangeToDestroyedSprite();
+        }
+    }
+
+    private void TryInteract()
+    {
+        if(GameManager.Instance.GetCollectibleCount() >= requiredCollectibles)
+        {
+            isRestored = true;
+            GameManager.Instance.RemoveCollectibles(requiredCollectibles);
+            GetComponent<SpriteRenderer>().sprite = treeSprite;
+            interactionPrompt.SetActive(false);
+        }
+        else
+        {
+            tipText.text = "Not enough Crystals";
+            StartCoroutine(SwitchText());
+        }
+    }
+
+    private void ChangeToDestroyedSprite()
+    {
+        GetComponent<SpriteRenderer>().sprite = destroyedSprite;
+    }
+
+    IEnumerator SwitchText()
+    {
+        yield return new WaitForSeconds(2f);
+        tipText.text = originalTipText;
+    }
+}

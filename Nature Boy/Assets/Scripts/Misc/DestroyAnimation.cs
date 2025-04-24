@@ -5,10 +5,12 @@ public class DestroyAnimation : MonoBehaviour
 {
     private EnemyController enemy;
     private Animator animator;
+    private AudioSource audioSource;
 
     public void Initialize(EnemyController enemy)
     {
         animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
 
         if(enemy != null && animator != null)
         {
@@ -28,6 +30,7 @@ public class DestroyAnimation : MonoBehaviour
                     break;
             }
             animator.Play(animation);
+            audioSource.Play();
         }
     }
     public void DestroyAfterAnimation()
