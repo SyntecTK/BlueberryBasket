@@ -6,10 +6,11 @@ public class DestroyAnimation : MonoBehaviour
     private EnemyController enemy;
     private Animator animator;
 
-    private void Awake()
+    public void Initialize(EnemyController enemy)
     {
-        enemy = GetComponent<EnemyController>();
         animator = GetComponent<Animator>();
+        Debug.Log($"Animator: {animator}");
+        Debug.Log($"Enemy: {enemy}");
 
         if(enemy != null && animator != null)
         {
@@ -17,17 +18,18 @@ public class DestroyAnimation : MonoBehaviour
             switch(enemy.Type)
             {
                 case EnemyController.EnemyType.Human:
-                    animation = "NormalExplosion";
+                    animation = "BloodExplosion";
                     break;
 
                 case EnemyController.EnemyType.Robot:
-                    animation = "BloodExplosion";
+                    animation = "NormalExplosion";
                     break;
 
                 case EnemyController.EnemyType.Building:
                     animation = "NormalExplosion";
                     break;
             }
+            Debug.Log($"Playing animation {animation}");
             animator.Play(animation);
         }
     }

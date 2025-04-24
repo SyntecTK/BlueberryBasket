@@ -54,7 +54,8 @@ public class EnemyController : MonoBehaviour
             //Ranged Enemies explode
             if(GetComponent<ShooterBehaviour>() != null)
             {
-                Instantiate(explosionPrefab, GetComponent<SpriteRenderer>().transform.position, Quaternion.identity);
+                GameObject explosion = Instantiate(explosionPrefab, GetComponent<SpriteRenderer>().transform.position, Quaternion.identity);
+                explosion.GetComponent<DestroyAnimation>().Initialize(this);
             }
         }
         Destroy(gameObject);
