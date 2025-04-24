@@ -32,6 +32,7 @@ public class Destructable : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         TMP_Text[] textComponents = interactionPrompt.GetComponentsInChildren<TMP_Text>();
+        Debug.Log("Length: "+textComponents.Length);
         interactionText = textComponents[0];
         tipText = textComponents[1];
         originalTipText = tipText.text;
@@ -45,10 +46,12 @@ public class Destructable : MonoBehaviour
         if (distance < interactionRange && isDestroyed)
         {
             isInRange = true;
+            Debug.Log("Is in Range at " + gameObject.name);
             interactionText.text = requiredCrystals.ToString();
             if(!isRestored)
             {
                 interactionPrompt.SetActive(true);
+                Debug.Log("SetActive");
             }
             if(Input.GetMouseButtonDown(1))
             {
