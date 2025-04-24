@@ -7,7 +7,10 @@ public class StaffRotation : MonoBehaviour
 
     void Update()
     {
-        mousePos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+        if(mainCamera != null)
+        {
+            mousePos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+        }
     }
 
     private void FixedUpdate()

@@ -5,6 +5,13 @@ using Random = UnityEngine.Random;
 
 public class Collectible : MonoBehaviour
 {
+    public enum CollectibleType
+    {
+        Flower,
+        Leaf
+    }
+
+    [SerializeField] private CollectibleType type;
     [SerializeField] private float launchForce = 3f;
     [SerializeField] private float slowdownTime = 0.5f;
     [SerializeField] private float hoverSpeed = 3f;
@@ -40,7 +47,14 @@ public class Collectible : MonoBehaviour
     {
         if (collision.transform.tag == "Player")
         {
-            GameManager.Instance?.CollectiblePickedUp();
+            if(type == CollectibleType.Flower)
+            {
+                GameManager.Instance.PicketUpFlower();
+            }else if(type == CollectibleType.Leaf)
+            {
+                GameManager.Instance.PickedUpLeaf();
+            }
+            GameManager.Instance.CrystalPickedUp();
             Destroy(gameObject);
         }
     }

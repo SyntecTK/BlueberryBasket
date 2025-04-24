@@ -5,10 +5,13 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
+    [SerializeField] PlayerController player;
+    public static event Action<int> OnPlayerLifeChange;
+    public static event Action<int> OnLeafPickedUp;
     public static event Action OnCollectiblePickedUp;
     private int currentCollectibles = 0;
+    private int currentNatureValue = 0;
 
-    public static event Action<int> OnPlayerDamaged;
 
     private void Awake()
     {
@@ -27,26 +30,38 @@ public class GameManager : MonoBehaviour
     {
         currentCollectibles = 0;
     }
-
-    public void CollectiblePickedUp()
+    #region Crystal
+    public void CrystalPickedUp()
     {
         currentCollectibles++;
         OnCollectiblePickedUp?.Invoke();
     }
 
-    public int GetCollectibleCount()
+    public int GetCrystalCount()
     {
         return currentCollectibles;
     }
 
-    public void RemoveCollectibles(int count)
+    public void RemoveCrystals(int count)
     {
         currentCollectibles = currentCollectibles - count;
         OnCollectiblePickedUp?.Invoke();
     }
-
-    public void PlayerTookDamage(int currentHealth)
+    #endregion
+    #region Flower
+    public void PicketUpFlower()
     {
-        OnPlayerDamaged?.Invoke(currentHealth);
+        player.Heal(1);
+    }
+
+    public void PickedUpLeaf()
+    {
+        currentNatureValue++;
+        OnLeafPickedUp?.Invoke(currentNatureValue);
+    }
+    #endregion
+    public void UpdatePlayerLife(int currentHealth)
+    {
+        OnPlayerLifeChange?.Invoke(currentHealth);
     }
 }

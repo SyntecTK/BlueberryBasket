@@ -20,7 +20,10 @@ public class Shooting : MonoBehaviour
 
     private void Update()
     {
-        mousePos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+        if(mainCamera != null)
+        {
+            mousePos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+        }
         crosshair.transform.position = mousePos;
 
         if (_shootContinuously || _fireSingle)

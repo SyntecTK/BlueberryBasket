@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class Destructable : MonoBehaviour
 {
+    [Header ("Stats")]
     [SerializeField] float health;
     [SerializeField] private float interactionRange = 5f;
-    [SerializeField] private int requiredCollectibles = 3;
     [SerializeField] private GameObject interactionPrompt;
+    [Header("Collectibles")]
+    [SerializeField] private int requiredCrystals = 3;
+    [SerializeField] private GameObject flowerPrefab;
+    [SerializeField] private GameObject leafPrefab;
+    [SerializeField] private int collectibleCount;
     [Header("Sprites"), SerializeField] private Sprite destroyedSprite;
     [SerializeField] private Sprite treeSprite;
 
@@ -36,7 +41,7 @@ public class Destructable : MonoBehaviour
         if (distance < interactionRange && isDestroyed)
         {
             isInRange = true;
-            interactionText.text = requiredCollectibles.ToString();
+            interactionText.text = requiredCrystals.ToString();
             if(!isRestored)
             {
                 interactionPrompt.SetActive(true);
@@ -65,12 +70,18 @@ public class Destructable : MonoBehaviour
 
     private void TryInteract()
     {
-        if(GameManager.Instance.GetCollectibleCount() >= requiredCollectibles)
+        if(GameManager.Instance.GetCrystalCount() >= requiredCrystals)
         {
             isRestored = true;
-            GameManager.Instance.RemoveCollectibles(requiredCollectibles);
+            GameManager.Instance.RemoveCrystals(requiredCrystals);
             GetComponent<SpriteRenderer>().sprite = treeSprite;
             interactionPrompt.SetActive(false);
+
+            for(int i = 0; i < requiredCrystals; i++)
+            {
+                GameObject prefabToSpawn = Random.value < 0.5f ? flowerPrefab : leafPrefab;
+                Instantiate(prefabToSpawn, transform.position, Quaternion.identity);
+            }
         }
         else
         {

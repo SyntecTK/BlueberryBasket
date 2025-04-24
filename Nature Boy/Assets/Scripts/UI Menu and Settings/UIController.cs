@@ -12,13 +12,15 @@ public class UIController : MonoBehaviour {
     private void Awake() {
         instance = this;
         GameManager.OnCollectiblePickedUp += UpdateCollectibleScore;
-        GameManager.OnPlayerDamaged += UpdateHealthBar;
+        GameManager.OnPlayerLifeChange += UpdateHealthBar;
+        GameManager.OnLeafPickedUp += UpdateNatureBar;
     }
 
     private void OnDestroy()
     {
-        GameManager.OnPlayerDamaged += UpdateHealthBar;
+        GameManager.OnPlayerLifeChange += UpdateHealthBar;
         GameManager.OnCollectiblePickedUp -= UpdateCollectibleScore;
+        GameManager.OnLeafPickedUp -= UpdateNatureBar;
     }
 
     public Image fadeScreen;
@@ -26,6 +28,7 @@ public class UIController : MonoBehaviour {
     public float fadeSpeed = 1f;
 
     public Slider healthSlider;
+    public Slider natureSlider;
     public TMP_Text healthText, timeText;
     public TMP_Text dieText;
     public TMP_Text coinText;
@@ -79,13 +82,21 @@ public class UIController : MonoBehaviour {
 
     private void UpdateCollectibleScore()
     {
-        coinText.text = GameManager.Instance.GetCollectibleCount().ToString();
+        coinText.text = GameManager.Instance.GetCrystalCount().ToString();
     }
     private void UpdateHealthBar(int currentHealth)
     {
         if (healthSlider != null)
         {
             healthSlider.value = currentHealth;
+        }
+    }
+
+    private void UpdateNatureBar(int currentNature)
+    {
+        if(natureSlider != null)
+        {
+            natureSlider.value = currentNature;
         }
     }
 

@@ -62,6 +62,13 @@ public class PlayerController : MonoBehaviour
 
         HandleDash();
     }
+    private void FixedUpdate()
+    {
+        if(!isDashing)
+        {
+            rb.linearVelocity = input * moveSpeed;
+        }
+    }
 
     private void HandleDash()
     {
@@ -89,13 +96,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
-    {
-        if(!isDashing)
-        {
-            rb.linearVelocity = input * moveSpeed;
-        }
-    }
 
     private Vector2 Get8Direction(Vector2 input) {
         input.Normalize();
@@ -144,6 +144,11 @@ public class PlayerController : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
-        GameManager.Instance.PlayerTookDamage(currentHealth);
+        GameManager.Instance.UpdatePlayerLife(currentHealth);
+    }
+    public void Heal(int value)
+    {
+        currentHealth += value;
+        GameManager.Instance.UpdatePlayerLife(currentHealth);
     }
 }
