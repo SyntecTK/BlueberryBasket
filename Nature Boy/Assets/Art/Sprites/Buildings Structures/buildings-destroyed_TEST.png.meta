@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      buildings-destroyed_TEST_0: 4892014929872665467
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

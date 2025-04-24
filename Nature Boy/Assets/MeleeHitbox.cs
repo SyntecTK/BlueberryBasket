@@ -14,7 +14,7 @@ public class MeleeHitbox : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.transform.tag == "Enemy")
+        if (collision.transform.tag == "Enemy" || collision.transform.tag == "Destroyable")
         {
             enemyIsClose = true;
             enemies.Add(collision.gameObject);
@@ -22,7 +22,7 @@ public class MeleeHitbox : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.transform.tag == "Enemy")
+        if (collision.transform.tag == "Enemy" || collision.transform.tag == "Destroyable")
         {
             enemyIsClose = false;
             if (enemies.Contains(collision.gameObject))
